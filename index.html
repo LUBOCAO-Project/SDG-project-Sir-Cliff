@@ -1,99 +1,169 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Connect</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Community E - Home</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+    body {
+       background:#ffffff;
+       padding-top: 60px;
+      }
 
-        body{
-            background-color: #f5f7f6; 
-            color: #333;
-            line-height: 1.6;
-        }
+    /* HEADER */
+    header {
+        width:100%;
+        background:black;
+        color:white;
+        padding:35px 20px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 999;
+    }
 
-        header{
-            background-color: #2e7d32;
-            color: white;
-            padding: 15px 30px;
-            justify-content: space-between;
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    .hero-container {
+    position: relative;
+    width: 100%;
+}
 
-        header h1{
-            font-size: 1.5rem;
-        }
+.hero-img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
 
-        nav a{
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-        }
+/* Centered slogan */
+.slogan-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-        nav a:hover{
-            text decoration: underline;
-        }
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.4);  /* optional darken for readability */
+    padding: 8px 15px;
+    border-radius: 6px;
+    text-align: center;
+}
 
-        .hero{
-            background: url ('')center/cover no repeat;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
+    header .logo-text { font-size:18px; font-weight:bold; }
+    header nav a {
+        color:white;
+        margin-left:20px;
+        text-decoration:none;
+        font-size:14px;
 
-        .hero h2{
-            font-size: 2.5rem;
-            background-color: rgba(0,0,0,0.5);
-            display: inline-block;
-            padding: 10px 20px
-            border-radius: 10px;
-        }
-    </style>
+    }
+
+    /* CITY TITLE */
+    .city-title {
+        font-size:22px;
+        font-weight:600;
+        margin-left:20px;
+        margin-bottom:10px;
+    }
+
+    .big-box {
+        background:#dcdcdc;
+        padding:40px 20px;
+        margin:0 20px 20px;
+        text-align:center;
+        font-weight:700;
+        border-radius:5px;
+        font-family:'Comic Sans MS';
+    }
+
+    /* LATEST ANNOUNCEMENTS */
+    .section-title { margin-left:20px; margin-bottom:10px; font-weight:600; }
+
+    .cards {
+        display:flex;
+        gap:10px;
+        padding:0 20px;
+        margin-bottom:20px;
+    }
+    .card {
+        background:#dcdcdc;
+        width:100%;
+        text-align:center;
+        padding:10px;
+        border-radius:4px;
+        font-size:12px;
+    }
+    .card button {
+        margin-top:5px;
+        background:#99c77d;
+        border:none;
+        padding:5px 10px;
+        font-size:12px;
+        cursor:pointer;
+        border-radius:4px;
+    }
+
+    /* FOOTER */
+    footer {
+        background:black;
+        color:white;
+        padding:20px;
+        margin-top:20px;
+    }
+    footer p { font-size:13px; margin-bottom:10px; }
+    footer .contact-list div { margin-bottom:5px; }
+</style>
 </head>
 <body>
 
-    <header>
-    <h1>Community Connect</h1>
+<header>
+    <div class="logo-text">COMMUNITY CONNECT</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Announcements</a>
-      <a href="#">Report Issue</a>
-      <a href="#">Contact</a>
+        <a href="about.html">ABOUT</a>
+        <a href="signin.html">SIGN IN</a>
     </nav>
-  </header>
+</header>
 
-    <div class="hero">
-    <h2>Together for a Sustainable Community 🌱</h2>
-  </div>
+<div class="hero-container">
+    <img src="https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?cs=srgb&dl=pexels-leah-newhouse-50725-325521.jpg&fm=jpg" class="hero-img" alt="">
+    <div class="slogan-text">Together for a Sustainable Community</div>
+</div>
 
-  <!-- Announcements Section -->
-  <section>
-    <h2>📢 Latest Announcements</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>Barangay Cleanup Drive</h3>
-        <p>Join us this Saturday for a community cleanup drive along the riverbanks. Let’s make our area clean and green!</p>
-        <a href="#" class="btn">Learn More</a>
-      </div>
-      <div class="card">
-        <h3>Tree Planting Activity</h3>
-        <p>Support our reforestation project by joining our tree planting event on Sunday morning. Tools will be provided.</p>
-        <a href="#" class="btn">Join Now</a>
-      </div>
-      <div class="card">
-        <h3>Recycling Workshop</h3>
-        <p>Learn creative ways to reuse plastic and paper. Free registration for all youth volunteers.</p>
-        <a href="#" class="btn">Register</a>
-      </div>
+
+<div class="city-title">Manolo Fortich</div>
+
+<div class="big-box">
+    Manolo Fortich Map <br />
+    Using Leaflet <br />
+    Can Identify Weather <br />
+    Using OpenWeather
+</div>
+
+<div class="section-title">Latest Announcements:</div>
+<div class="cards">
+   
+  <div class="card">
+    Community Clean Up Drive<br>
+    <a href="cleanupdrive.html">
+        <button>View</button>
+    </a>
+</div>
+    <div class="card">Tree Planting Program<br><button>View</button></div>
+    <div class="card">Recycling and Waste Management Program<br><button>View</button></div>
+</div>
+
+<footer>
+    <p>We could make something great together</p>
+    <div class="contact-list">
+        <div>📘 Kim Lucero</div>
+        <div>📷 Jst Yuuki</div>
+        <div>✉️ Yuuki.lucero@gmail.com</div>
     </div>
-  </section>
+</footer>
+
 </body>
 </html>
