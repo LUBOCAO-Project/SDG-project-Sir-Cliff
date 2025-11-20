@@ -11,7 +11,6 @@
        padding-top: 60px;
       }
 
-    /* HEADER */
     header {
         width:100%;
         background:black;
@@ -37,7 +36,6 @@
     object-fit: cover;
 }
 
-/* Centered slogan */
 .slogan-text {
     position: absolute;
     top: 50%;
@@ -47,7 +45,7 @@
     color: white;
     font-size: 30px;
     font-weight: 600;
-    background: rgba(0, 0, 0, 0.4);  /* optional darken for readability */
+    background: rgba(0, 0, 0, 0.4); 
     padding: 8px 15px;
     border-radius: 6px;
     text-align: center;
@@ -62,7 +60,6 @@
 
     }
 
-    /* CITY TITLE */
     .city-title {
         font-size:22px;
         font-weight:600;
@@ -80,7 +77,6 @@
         font-family:'Comic Sans MS';
     }
 
-    /* LATEST ANNOUNCEMENTS */
     .section-title { margin-left:20px; margin-bottom:10px; font-weight:600; }
 
     .cards {
@@ -107,15 +103,31 @@
         border-radius:4px;
     }
 
-    /* FOOTER */
-    footer {
-        background:black;
-        color:white;
-        padding:20px;
-        margin-top:20px;
-    }
-    footer p { font-size:13px; margin-bottom:10px; }
-    footer .contact-list div { margin-bottom:5px; }
+   footer {
+    background:black;
+    color:white;
+    padding:25px 0;
+    margin-top:40px;
+    text-align:center;
+}
+
+.footer-title {
+    font-size:30px;
+    font-weight:600;
+    margin-bottom:15px;
+    text-align: left;
+}
+
+.footer-contacts {
+    display: inline-block;      
+    text-align: left;           
+}
+
+.footer-contacts div {
+    margin:5px 0;
+    font-size:14px;
+}
+
 </style>
 </head>
 <body>
@@ -157,11 +169,13 @@
 </div>
 
 <footer>
-    <p>We could make something great together</p>
-    <div class="contact-list">
-        <div>📘 Kim Lucero</div>
-        <div>📷 Jst Yuuki</div>
-        <div>✉️ Yuuki.lucero@gmail.com</div>
+    <p class="footer-title">We Can Make Something</p>
+    <p class="footer-title">Great Together</p>
+
+    <div class="footer-contacts">
+        <div>📘 CC Facebook Page</div>
+        <div>📷 CommunityConnect</div>
+        <div>✉️ ComConnectgmail.com</div>
     </div>
 </footer>
 
