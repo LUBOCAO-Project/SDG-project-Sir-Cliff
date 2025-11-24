@@ -67,16 +67,6 @@
         margin-bottom:10px;
     }
 
-    .big-box {
-        background:#dcdcdc;
-        padding:40px 20px;
-        margin:0 20px 20px;
-        text-align:center;
-        font-weight:700;
-        border-radius:5px;
-        font-family:'Comic Sans MS';
-    }
-
     .section-title { margin-left:20px; margin-bottom:10px; font-weight:600; }
 
     .cards {
@@ -102,6 +92,14 @@
         cursor:pointer;
         border-radius:4px;
     }
+
+    #map {
+    height: 400px;
+    width: 70%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
 
    footer {
     background:black;
@@ -148,12 +146,12 @@
 
 <div class="city-title">Manolo Fortich</div>
 
-<div class="big-box">
-    Manolo Fortich Map <br />
-    Using Leaflet <br />
-    Can Identify Weather <br />
-    Using OpenWeather
-</div>
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<div id="map"></div>
+
 
 <div class="section-title">Latest Announcements:</div>
 <div class="cards">
@@ -167,6 +165,20 @@
     <div class="card">Tree Planting Program<br><button>View</button></div>
     <div class="card">Recycling and Waste Management Program<br><button>View</button></div>
 </div>
+
+<script>
+    var map = L.map('map').setView([8.368018729044264, 124.8664225779766], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    L.marker([8.3699, 124.8643]).addTo(map)
+        .bindPopup("Manolo Fortich, Bukidnon")
+        .openPopup();
+</script>
+
 
 <footer>
     <p class="footer-title">We Can Make Something</p>

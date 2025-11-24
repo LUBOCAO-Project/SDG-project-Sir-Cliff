@@ -51,6 +51,12 @@
         line-height:1.6;
     }
 
+    #map {
+    height: 400px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+    }
 
     footer {
         background:black;
@@ -72,6 +78,16 @@
     </nav>
 </header>
 
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+
+<div id="map"></div>
+
+
 <div class="title-box">Tree Planting Program</div>
 
 <img src="treeplanting.jpg" class="preview-img" alt="Tree Planting Image" />
@@ -79,6 +95,22 @@
 <div class="desc">
     This page contains the full details of the Tree Planting Program. Replace this text with real information such as event schedule, venue, volunteers, partnered organizations, and program updates.
 </div>
+
+<script>
+    // Initialize map and set default location (Manolo Fortich)
+    var map = L.map('map').setView([8.3699, 124.8643], 13);
+
+    // Load and display OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    // Marker example
+    L.marker([8.3699, 124.8643]).addTo(map)
+        .bindPopup("Manolo Fortich, Bukidnon")
+        .openPopup();
+</script>
 
 <footer>
     <p>Same design Footer</p>
