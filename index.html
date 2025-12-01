@@ -4,12 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Community E - Home</title>
+
 <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
     body {
        background:#ffffff;
        padding-top: 60px;
-      }
+    }
 
     header {
         width:100%;
@@ -26,30 +27,29 @@
     }
 
     .hero-container {
-    position: relative;
-    width: 100%;
-}
+        position: relative;
+        width: 100%;
+    }
 
-.hero-img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-}
+    .hero-img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
 
-.slogan-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    color: white;
-    font-size: 30px;
-    font-weight: 600;
-    background: rgba(0, 0, 0, 0.4); 
-    padding: 8px 15px;
-    border-radius: 6px;
-    text-align: center;
-}
+    .slogan-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 30px;
+        font-weight: 600;
+        background: rgba(0, 0, 0, 0.4); 
+        padding: 8px 15px;
+        border-radius: 6px;
+        text-align: center;
+    }
 
     header .logo-text { font-size:18px; font-weight:bold; }
     header nav a {
@@ -57,14 +57,14 @@
         margin-left:20px;
         text-decoration:none;
         font-size:14px;
-
     }
 
     .city-title {
-        font-size:22px;
+        font-size:45px;
         font-weight:600;
         margin-left:20px;
         margin-bottom:10px;
+        
     }
 
     .section-title { margin-left:20px; margin-bottom:10px; font-weight:600; }
@@ -79,54 +79,59 @@
         background:#dcdcdc;
         width:100%;
         text-align:center;
-        padding:10px;
-        border-radius:4px;
-        font-size:12px;
+        padding:50px;
+        border-radius:20px;
+        font-size:24px;
+        font-weight: bold;
+
     }
     .card button {
-        margin-top:5px;
+        margin-top:50px;
         background:#99c77d;
         border:none;
-        padding:5px 10px;
+        padding:15px 25px;
         font-size:12px;
         cursor:pointer;
-        border-radius:4px;
+        border-radius:10px;
     }
 
     #map {
-    height: 400px;
-    width: 70%;
-    margin: 20px auto;
-    border-radius: 10px;
-}
+        height: 600px;
+        width: 80%;
+        margin: 20px auto;
+        border-radius: 10px;
+    }
 
+    footer {
+        background:black;
+        color:white;
+        padding:25px 0;
+        margin-top:40px;
+        text-align:center;
+    }
 
-   footer {
-    background:black;
-    color:white;
-    padding:25px 0;
-    margin-top:40px;
-    text-align:center;
-}
+    .footer-title {
+        font-size:30px;
+        font-weight:600;
+        margin-bottom:15px;
+        text-align: left;
+    }
 
-.footer-title {
-    font-size:30px;
-    font-weight:600;
-    margin-bottom:15px;
-    text-align: left;
-}
+    .footer-contacts {
+        display: inline-block;      
+        text-align: left;           
+    }
 
-.footer-contacts {
-    display: inline-block;      
-    text-align: left;           
-}
-
-.footer-contacts div {
-    margin:5px 0;
-    font-size:14px;
-}
-
+    .footer-contacts div {
+        margin:5px 0;
+        font-size:14px;
+    }
 </style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </head>
 <body>
 
@@ -139,46 +144,87 @@
 </header>
 
 <div class="hero-container">
-    <img src="https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?cs=srgb&dl=pexels-leah-newhouse-50725-325521.jpg&fm=jpg" class="hero-img" alt="">
+    <img src="https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg" class="hero-img" alt="">
     <div class="slogan-text">Together for a Sustainable Community</div>
 </div>
 
-
-<div class="city-title">Manolo Fortich</div>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<div class="city-title">MANOLO FORTICH BUKIDNON</div>
 
 <div id="map"></div>
 
-
-<div class="section-title">Latest Announcements:</div>
-<div class="cards">
-   
-  <div class="card">
-    Community Clean Up Drive<br>
-    <a href="cleanupdrive.html">
-        <button>View</button>
-    </a>
-</div>
-    <div class="card">Tree Planting Program<br><button>View</button></div>
-    <div class="card">Recycling and Waste Management Program<br><button>View</button></div>
-</div>
-
 <script>
-    var map = L.map('map').setView([8.368018729044264, 124.8664225779766], 13);
+// Load Map
+var map = L.map('map').setView([8.368018729044264, 124.8664225779766], 13);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
 
-    L.marker([8.3699, 124.8643]).addTo(map)
-        .bindPopup("Manolo Fortich, Bukidnon")
-        .openPopup();
+const popupContent = `
+    <div style="text-align:center;">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzpI-dX6lQJ9dP37CtyNLI2Wv-SPcu6BstxII9ljcaUDfLS1nZV9ygq6zUt4SfmIIaSkn5PvWRabnU8venU5uk-oDQB5k1vHE1yI-FWvOGUiSW8V4haQ4nyw2fWD_nOtwyTjEM0CQ=w408-h302-k-no"
+             style="width:100%; height:120px; object-fit:cover; border-radius:6px; margin-bottom:8px;">
+
+        <h3 style="font-size:16px; margin-bottom:5px;">Manolo Fortich</h3>
+        <p style="font-size:13px; line-height:1.4;">
+            Known for its strong community involvement and environmental programs.
+        </p>
+
+        <div id="weather-box">
+            <p>Loading weather...</p>
+        </div>
+    </div>
+`;
+
+// Marker
+const marker = L.marker([8.368050494910758, 124.86630281133502])
+    .addTo(map)
+    .bindPopup(popupContent);
+
+// WEATHER API
+const apiKey = "510cef28f603cd44237f98ba79ae8499";
+const lat = 8.3699;
+const lon = 124.8643;
+
+async function loadPopupWeather() {
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    const icon = data.weather[0].icon;
+
+    const weatherHTML = `
+        <img src="https://openweathermap.org/img/wn/${icon}@2x.png" style="width:60px;">
+        <p><b>${data.main.temp}°C</b></p>
+        <p>${data.weather[0].description}</p>
+    `;
+
+    document.getElementById("weather-box").innerHTML = weatherHTML;
+}
+
+// load weather
+map.on("popupopen", function () {
+    loadPopupWeather();
+});
 </script>
 
+<div class="section-title">MANOLO FORTICH PROGRAMS:</div>
+<div class="cards">
+    <div class="card">
+        CLEAN UP DRIVE PROGRAM<br>
+        <a href="cleanupdrive.html"><button>View</button></a>
+    </div>
+    <div class="card">
+        TREE PLANTING PROGRAM<br>
+        <button>View</button>
+    </div>
+    <div class="card">
+        RECYCLING PROGRAM<br>
+        <button>View</button>
+    </div>
+</div>
 
 <footer>
     <p class="footer-title">We Can Make Something</p>
