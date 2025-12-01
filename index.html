@@ -71,9 +71,9 @@
 
     .cards {
         display:flex;
-        gap:10px;
-        padding:0 20px;
-        margin-bottom:20px;
+        gap:20px;
+        padding:0px 100px;
+        margin-bottom:50px;
     }
     .card {
         background:#dcdcdc;
@@ -227,15 +227,11 @@ map.on("popupopen", function () {
 </div>
 
 <footer>
-    <p class="footer-title">We Can Make Something</p>
-    <p class="footer-title">Great Together</p>
-
-    <div class="footer-contacts">
-        <div>📘 CC Facebook Page</div>
-        <div>📷 CommunityConnect</div>
-        <div>✉️ ComConnectgmail.com</div>
-    </div>
+    © <span id="year"></span> by Community Connect | Me-ah Ui
 </footer>
+<script>
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
 
 </body>
 </html>
