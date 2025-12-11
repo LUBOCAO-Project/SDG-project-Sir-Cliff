@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SIGN IN - Community E</title>
+<title>COMMUNITY CONNECT - SIGN IN PAGE</title>
+
 <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
     body { 
@@ -15,13 +16,12 @@
         width:100%;
         background:black;
         color:white;
-        padding:35px 20px;
+        padding:50px 20px;
         display:flex;
         align-items:center;
         justify-content:space-between;
         position: fixed;
         top: 0;
-        width: 100%;
         z-index: 999;
     }
 
@@ -32,7 +32,7 @@
 
     .hero-img {
         width: 100%;
-        height: 600px;
+        height: 400px;
         object-fit: cover;
     }
 
@@ -96,30 +96,30 @@
         margin-top:15px;
     }
 
-   footer {
-    background:black;
-    color:white;
-    padding:25px 0;
-    margin-top:40px;
-    text-align:center;
-}
+    footer {
+        background:black;
+        color:white;
+        padding:25px 0;
+        margin-top:40px;
+        text-align:center;
+    }
 
-.footer-title {
-    font-size:30px;
-    font-weight:600;
-    margin-bottom:5px;
-    text-align: left;
-}
+    .footer-title {
+        font-size:30px;
+        font-weight:600;
+        margin-bottom:5px;
+        text-align: left;
+    }
 
-.footer-contacts {
-    display: inline-block;
-    text-align: left;
-}
+    .footer-contacts {
+        display: inline-block;
+        text-align: left;
+    }
 
-.footer-contacts div {
-    margin:5px 0;
-    font-size:14px;
-}
+    .footer-contacts div {
+        margin:5px 0;
+        font-size:14px;
+    }
 
 </style>
 </head>
@@ -131,33 +131,38 @@
     <nav>
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
-
     </nav>
 </header>
 
 <div class="hero-container">
-    <img src="https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?cs=srgb&dl=pexels-leah-newhouse-50725-325521.jpg&fm=jpg" class="hero-img" alt="">
+    <img src="https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg" class="hero-img" alt="">
     <div class="slogan-text">Together for a Sustainable Community</div>
 </div>
 
-
 <div class="signin-box">
     <div class="signin-title">SIGN IN</div>
+
     <input type="text" placeholder="Email" class="input-field" />
     <input type="password" placeholder="Password" class="input-field" />
-    <button class="signin-btn">Sign In</button>
+
+    <!-- ✅ Step 2 added here -->
+    <button class="signin-btn" onclick="login()">Sign In</button>
 </div>
 
 <footer>
-    <p class="footer-title">We Can Make Something</p>
-    <p class="footer-title">Great Together</p>
-
-    <div class="footer-contacts">
-        <div>📘 CC Facebook Page</div>
-        <div>📷 CommunityConnect</div>
-        <div>✉️ ComConnectgmail.com</div>
-    </div>
+    © <span id="year"></span> by Community Connect | Me-ah Ui
 </footer>
+
+<script>
+// Step 2: Save login status
+function login() {
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "index.html"; // redirect to home
+}
+
+// Footer year script
+document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
 
 </body>
 </html>

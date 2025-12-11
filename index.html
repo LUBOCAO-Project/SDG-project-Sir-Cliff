@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Community E - Home</title>
+<title>Community CONNECT - HOME PAGE</title>
 
 <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
@@ -22,7 +22,6 @@
         justify-content:space-between;
         position: fixed;
         top: 0;
-        width: 100%;
         z-index: 999;
     }
 
@@ -64,10 +63,16 @@
         font-weight:600;
         margin-left:20px;
         margin-bottom:10px;
-        
+        margin-top: 30px;
+        text-align: center;
     }
 
-    .section-title { margin-left:20px; margin-bottom:10px; font-weight:600; }
+    .section-title { 
+        margin-left:20px; 
+        margin-bottom:10px; 
+        font-weight:600;
+        margin-top: 60px;
+    }
 
     .cards {
         display:flex;
@@ -139,7 +144,7 @@
     <div class="logo-text">COMMUNITY CONNECT</div>
     <nav>
         <a href="about.html">ABOUT</a>
-        <a href="signin.html">SIGN IN</a>
+        <a id="auth-link" href="signin.html">SIGN IN</a>
     </nav>
 </header>
 
@@ -188,7 +193,7 @@ const lat = 8.3699;
 const lon = 124.8643;
 
 async function loadPopupWeather() {
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const url = https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric;
 
     const res = await fetch(url);
     const data = await res.json();
@@ -214,15 +219,15 @@ map.on("popupopen", function () {
 <div class="cards">
     <div class="card">
         CLEAN UP DRIVE PROGRAM<br>
-        <a href="cleanupdrive.html"><button>View</button></a>
+        <a href="cleanupdrive.html"><button>JOIN US</button></a>
     </div>
     <div class="card">
         TREE PLANTING PROGRAM<br>
-        <button>View</button>
+        <a href="treeplanting.html"><button>JOIN US</button></a>
     </div>
     <div class="card">
         RECYCLING PROGRAM<br>
-        <button>View</button>
+        <a href="recycling.html"><button>JOIN US</button></a>
     </div>
 </div>
 
@@ -232,6 +237,22 @@ map.on("popupopen", function () {
 <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
 </script>
+
+<script>
+const authLink = document.getElementById("auth-link");
+
+if (localStorage.getItem("loggedIn") === "true") {
+    authLink.textContent = "SIGN OUT";
+    authLink.href = "#";
+
+    // when clicked → logout
+    authLink.onclick = function () {
+        localStorage.removeItem("loggedIn");
+        window.location.href = "signin.html";
+    };
+}
+</script>
+
 
 </body>
 </html>
